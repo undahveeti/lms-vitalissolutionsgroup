@@ -16,7 +16,7 @@ export const SidebarItem = ({
     href,
 }: SidebarItemProps) => {
     const pathname = usePathname();
-    const router = useRouter;
+    const router = useRouter();
 
     // 1 for simple check for route page, 2 for the exact same page, 3 for the parent path of the specific page (were in the child)
     const isActive = (pathname === "/" && href === '/') || pathname === href || pathname?.startsWith('S{href}/');
