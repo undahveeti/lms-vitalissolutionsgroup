@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 /* import localFont from "next/font/local"; */
 import "./globals.css";
-
+import { Inter } from 'next/font/google'
 import {
   ClerkProvider
 } from '@clerk/nextjs'
+
+import ToastProvider from "@/components/providers/toaster-provider";
+
+const inter = Inter({subsets: ['latin']})
 
 /* const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +35,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body className = {inter.className}>
+          <ToastProvider/>
           {children}
         </body>
       </html>
